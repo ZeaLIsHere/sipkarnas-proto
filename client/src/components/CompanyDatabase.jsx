@@ -6,7 +6,7 @@ const CompanyDatabase = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetch('http://localhost:3001/api/companies')
+    fetch('/api/companies')
       .then(res => res.json())
       .then(data => {
         setCompanies(data);

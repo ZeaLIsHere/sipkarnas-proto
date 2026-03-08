@@ -17,7 +17,7 @@ const RealTimeEmission = () => {
   useEffect(() => {
     const fetchEmissions = () => {
       setIsLoading(true);
-      fetch('http://localhost:3001/api/emissions/realtime')
+      fetch('/api/emissions/realtime')
         .then(res => res.json())
         .then(data => {
           setEmissions(data);

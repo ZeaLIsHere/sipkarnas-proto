@@ -21,7 +21,7 @@ const CoreTaxSync = () => {
 
   const fetchSyncLogs = () => {
     setIsLoading(true);
-    fetch('http://localhost:3001/api/sync/logs')
+    fetch('/api/sync/logs')
       .then(res => res.json())
       .then(data => {
         setSyncLogs(data);

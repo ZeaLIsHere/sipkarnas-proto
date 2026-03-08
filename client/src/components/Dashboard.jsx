@@ -9,12 +9,12 @@ const Dashboard = () => {
 
   useEffect(() => {
     // Fetch data from API
-    fetch('http://localhost:3001/api/emissions/stats')
+    fetch('/api/emissions/stats')
       .then(res => res.json())
       .then(data => setStats(data))
       .catch(err => console.error('Error fetching stats:', err));
 
-    fetch('http://localhost:3001/api/companies')
+    fetch('/api/companies')
       .then(res => res.json())
       .then(data => setCompanies(data))
       .catch(err => console.error('Error fetching companies:', err));

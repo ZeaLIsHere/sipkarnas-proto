@@ -1,0 +1,243 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gradient-to-br from-secondary-50 via-white to-primary-50 text-secondary-900 font-sans antialiased;
+  }
+  
+  * {
+    @apply transition-colors duration-300;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white font-medium py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-glow active:scale-95 relative overflow-hidden;
+  }
+  
+  .btn-primary::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 transition-opacity duration-300;
+  }
+  
+  .btn-primary:hover::before {
+    @apply opacity-100;
+  }
+  
+  .btn-secondary {
+    @apply bg-gradient-to-r from-secondary-100 to-secondary-200 hover:from-secondary-200 hover:to-secondary-300 text-secondary-800 font-medium py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg active:scale-95;
+  }
+  
+  .card {
+    @apply bg-white/80 backdrop-blur-md rounded-2xl shadow-glass border border-white/20 p-6 transition-all duration-300 hover:shadow-xl hover:scale-[1.02];
+  }
+  
+  .card-header {
+    @apply border-b border-secondary-200/50 pb-4 mb-4;
+  }
+  
+  .glass-card {
+    @apply bg-white/20 backdrop-blur-lg rounded-2xl shadow-glass border border-white/30 p-6;
+  }
+  
+  .gradient-card {
+    @apply bg-gradient-to-br from-white/90 to-white/60 backdrop-blur-md rounded-2xl shadow-xl border border-white/20 p-6;
+  }
+  
+  .stat-card {
+    @apply bg-gradient-to-br from-white to-white/50 backdrop-blur-sm rounded-2xl shadow-lg border border-white/30 p-6 transition-all duration-300 hover:shadow-xl hover:scale-105 hover:-translate-y-1;
+  }
+  
+  .navigation-item {
+    @apply px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 transform hover:scale-105;
+  }
+  
+  .navigation-item.active {
+    @apply bg-gradient-to-r from-primary-100 to-primary-200 text-primary-700 shadow-glow;
+  }
+  
+  .navigation-item:not(.active) {
+    @apply text-secondary-600 hover:bg-secondary-100/80 hover:text-secondary-900 hover:shadow-md;
+  }
+  
+  .status-badge {
+    @apply inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold transition-all duration-300 transform hover:scale-105;
+  }
+  
+  .status-badge.success {
+    @apply bg-gradient-to-r from-green-100 to-green-200 text-green-800 border border-green-300 shadow-glow-green;
+  }
+  
+  .status-badge.warning {
+    @apply bg-gradient-to-r from-yellow-100 to-yellow-200 text-yellow-800 border border-yellow-300 shadow-glow-yellow;
+  }
+  
+  .status-badge.danger {
+    @apply bg-gradient-to-r from-red-100 to-red-200 text-red-800 border border-red-300 shadow-glow-red;
+  }
+  
+  .loading-skeleton {
+    @apply bg-gradient-to-r from-secondary-200 via-secondary-100 to-secondary-200 bg-[length:200%_100%] animate-shimmer rounded;
+  }
+  
+  .pulse-dot {
+    @apply w-3 h-3 rounded-full animate-pulse;
+  }
+  
+  .hover-lift {
+    @apply transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl;
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary-600 to-accent-purple bg-clip-text text-transparent;
+  }
+  
+  .bg-pattern {
+    background-image: 
+      radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 40% 20%, rgba(16, 185, 129, 0.1) 0%, transparent 50%);
+  }
+  
+  .chart-bar {
+    @apply bg-gradient-to-t from-primary-600 to-primary-400 rounded-t transition-all duration-500 hover:from-primary-500 hover:to-primary-300;
+  }
+  
+  .metric-value {
+    @apply text-3xl font-bold bg-gradient-to-r from-primary-600 to-accent-purple bg-clip-text text-transparent;
+  }
+  
+  .sidebar-item {
+    @apply w-full text-left px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 transform hover:scale-[1.02] hover:translate-x-2;
+  }
+  
+  .sidebar-item.active {
+    @apply bg-gradient-to-r from-primary-100 to-primary-200 text-primary-700 shadow-lg;
+  }
+  
+  .sidebar-item:not(.active) {
+    @apply text-secondary-600 hover:bg-secondary-100/80 hover:text-secondary-900 hover:shadow-md;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .text-shadow-lg {
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .backdrop-blur-xs {
+    backdrop-filter: blur(2px);
+  }
+  
+  .animate-float-delayed {
+    animation: float 3s ease-in-out infinite;
+    animation-delay: 0.5s;
+  }
+  
+  .animate-float-delayed-2 {
+    animation: float 3s ease-in-out infinite;
+    animation-delay: 1s;
+  }
+  
+  .animate-float-delayed-3 {
+    animation: float 3s ease-in-out infinite;
+    animation-delay: 1.5s;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-secondary-100 rounded-full;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gradient-to-b from-primary-400 to-primary-600 rounded-full hover:from-primary-500 hover:to-primary-700;
+}
+
+/* Selection color */
+::selection {
+  @apply bg-primary-200 text-primary-900;
+}
+
+/* Focus styles */
+.focus-ring {
+  @apply focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-white;
+}
+
+/* Leaflet Map Styles */
+.leaflet-container {
+  @apply rounded-xl overflow-hidden;
+}
+
+.custom-marker {
+  background: transparent !important;
+  border: none !important;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.leaflet-popup-content-wrapper {
+  @apply rounded-xl;
+}
+
+.leaflet-popup-content {
+  @apply border-0 rounded-xl shadow-2xl;
+  margin: 0;
+  min-width: 200px;
+}
+
+.leaflet-popup-tip {
+  @apply hidden;
+}
+
+/* Custom marker animations */
+.custom-marker div {
+  @apply transition-transform duration-300;
+}
+
+.custom-marker:hover div {
+  @apply scale-110;
+}
+
+/* Loading animation */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}

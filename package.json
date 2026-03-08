@@ -1,0 +1,14 @@
+{
+  "name": "sipkarnas-proto",
+  "version": "1.0.0",
+  "description": "SIPKARNAS Carbon Tax System",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cd client && npm run dev",
+    "build": "cd client && npm run build",
+    "start": "cd client && npm run preview"
+  },
+  "keywords": ["carbon", "tax", "emission", "indonesia"],
+  "author": "",
+  "license": "ISC"
+}

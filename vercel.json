@@ -1,9 +1,8 @@
 {
-  "functions": {
-    "server/index.js": {
-      "runtime": "@vercel/node"
-    }
-  },
+  "buildCommand": "cd client && npm install && npm run build",
+  "outputDirectory": "client/dist",
+  "installCommand": "npm install",
+  "framework": null,
   "rewrites": [
     {
       "source": "/api/(.*)",
@@ -13,8 +12,5 @@
       "source": "/(.*)",
       "destination": "/client/index.html"
     }
-  ],
-  "buildCommand": "cd client && npm install && npm run build",
-  "outputDirectory": "client/dist",
-  "installCommand": "npm install"
+  ]
 }
